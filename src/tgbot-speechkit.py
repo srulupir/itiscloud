@@ -106,23 +106,6 @@ def generate_speech(text):
         return audio
     return None
 
-# def generate_speech(text):
-#     url = "https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize"
-#     headers = {
-#         'Authorization': AUTH_HEADER,
-#         'Content-Type': 'application/json'
-#     }
-#     data = {
-#         'text': text,
-#         'lang': 'ru-RU',
-#         'folderId': SPEECH_API_KEY
-#     }
-#     response = requests.post(url, headers=headers, json=data)
-#     if response.ok:
-#         audio = response.content
-#         return audio
-#     return None
-
 def get_file(file_id):
     resp = requests.post(url=f'{TELEGRAM_API_URL}/getFile', json={'file_id': file_id})
     return resp.json()['result']
